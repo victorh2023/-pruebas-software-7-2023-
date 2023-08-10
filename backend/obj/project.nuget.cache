@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XAmyCwcuztuAsGVXa+Cbtbnzzp87bOP7uI3gDnQucQGaV02rbwL7AaN5E52pX5LrvTveeHGy9CEd9RLcBmidJA==",
+  "dgSpecHash": "8l+Q+HMiBQ6K7ULfSZHmf2Cuvo9JTTy/rGPG2jGV/DqJrsTWIiqjjxe/J75QF2+jk8mN2kQ++8jHR8SKkVwrpA==",
   "success": true,
   "projectFilePath": "C:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend\\backend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\USUARIO\\.nuget\\packages\\dapper\\2.0.143\\dapper.2.0.143.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
