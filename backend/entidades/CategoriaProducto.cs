@@ -1,6 +1,6 @@
-mamespace backend.entidades
+namespace backend.entidades
 {
-    plublic class Categoria_Producto : Common
+    public class CategoriaProducto : Common
     {
         public int Id { get; set; }
 

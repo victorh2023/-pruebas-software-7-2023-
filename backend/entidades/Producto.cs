@@ -1,11 +1,12 @@
-mamespace backend.entidades
+namespace backend.entidades
 {
-    plublic class Producto : Common
+    public class Producto : Common
     {
         public int Id { get; set; }
 
         public string Nombre { get; set; }
-        public string Id_Categoria { get; set; }
+
+        public int IdCategoria { get; set; }
 
     }
 }

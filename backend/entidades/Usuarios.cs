@@ -1,6 +1,6 @@
-mamespace backend.entidades
+namespace backend.entidades
 {
-    plublic class Usuarios : Common
+    public class Usuarios : Common
     {
         public int Id { get; set; }
 
