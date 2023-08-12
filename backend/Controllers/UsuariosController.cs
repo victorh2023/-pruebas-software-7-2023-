@@ -7,12 +7,12 @@ namespace backend.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class CategoriaProductoController : ControllerBase
+public class UsuariosController : ControllerBase
 {
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
 
-    public CategoriaProductoController(IConfiguration configuration)
+    public UsuariosController(IConfiguration configuration)
     {
         _configuration = configuration;
         connectionString = _configuration["SqlConnectionString:DefaultConnection"];
@@ -20,12 +20,12 @@ public class CategoriaProductoController : ControllerBase
     }
 
     [HttpGet]
-    [Route("GetAllCategoriaProducto")]
-    public IActionResult GetAllCategoriaProducto()
+    [Route("GetAllUsuarios")]
+    public IActionResult GetAllUsuarios()
     {
         try
         {
-            var result = CategoriaProductoServicios.ObtenerTodo<CategoriaProducto>();
+            var result = UsuariosServicios.ObtenerTodo<Usuarios>();
             return Ok(result);
         }
         catch (Exception ex)
@@ -36,12 +36,12 @@ public class CategoriaProductoController : ControllerBase
 
 
     [HttpGet]
-    [Route("GetCategoriaProductoById")]
-    public IActionResult GetCategoriaProductoById([FromQuery] int id)
+    [Route("GetUsuariosById")]
+    public IActionResult GetUsuariosById([FromQuery] int id)
     {
         try
         {
-            var result = CategoriaProductoServicios.ObtenerById<CategoriaProducto>(id);
+            var result = UsuariosServicios.ObtenerById<Usuarios>(id);
             return Ok(result);
         }
         catch (Exception ex)
@@ -51,12 +51,12 @@ public class CategoriaProductoController : ControllerBase
     }
 
     [HttpPost]
-    [Route("AddCategoriaProducto")]
-    public IActionResult AddCategoriaProducto(CategoriaProducto categoriaProducto)
+    [Route("AddUsuario")]
+    public IActionResult AddUsuario(Usuarios usuarios)
     {
         try
         {
-            var result = CategoriaProductoServicios.InsertCategoriaProducto(categoriaProducto);
+            var result = UsuariosServicios.InsertUsuario(usuarios);
             return Ok(result);
         }
         catch (Exception ex)
