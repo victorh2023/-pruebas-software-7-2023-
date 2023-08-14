@@ -25,6 +25,8 @@ namespace backend.servicios
             return result.FirstOrDefault();
         }
 
+        //Para indicar las consultas de base de datos de los usuarios
+
         public static int InsertUsuario(Usuarios usuarios)
         {
             const string sql = "INSERT INTO [dbo].[USUARIOS]([USER_NAME], [NOMBRE_COMPLETO], [PASSWORD]) VALUES (@user_name, @nombre_completo, @password) ";

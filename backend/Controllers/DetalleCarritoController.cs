@@ -7,12 +7,12 @@ namespace backend.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class UsuariosController : ControllerBase
+public class DetalleCarritoController : ControllerBase
 {
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
 
-    public UsuariosController(IConfiguration configuration)
+    public DetalleCarritoController(IConfiguration configuration)
     {
         _configuration = configuration;
         connectionString = _configuration["SqlConnectionString:DefaultConnection"];
@@ -22,12 +22,12 @@ public class UsuariosController : ControllerBase
     //Muestra la lista de todos los usuruarios registrados
 
     [HttpGet]
-    [Route("GetAllUsuarios")]
-    public IActionResult GetAllUsuarios()
+    [Route("GetAllDetalleCarrito")]
+    public IActionResult GetAllDetalleCarrito()
     {
         try
         {
-            var result = UsuariosServicios.ObtenerTodo<Usuarios>();
+            var result = DetalleCarritoServicios.ObtenerTodo<DetalleCarrito>();
             return Ok(result);
         }
         catch (Exception ex)
@@ -39,12 +39,12 @@ public class UsuariosController : ControllerBase
     //insertando los Id muestra el usuario en una tabla con sus registros
 
     [HttpGet]
-    [Route("GetUsuariosById")]
-    public IActionResult GetUsuariosById([FromQuery] int id)
+    [Route("GetDetalleCarritoById")]
+    public IActionResult GetDetalleCarritoById([FromQuery] int id)
     {
         try
         {
-            var result = UsuariosServicios.ObtenerById<Usuarios>(id);
+            var result = DetalleCarritoServicios.ObtenerById<DetalleCarrito>(id);
             return Ok(result);
         }
         catch (Exception ex)
@@ -56,12 +56,12 @@ public class UsuariosController : ControllerBase
     //para Adicionar usuarios en la base de datos
 
     [HttpPost]
-    [Route("AddUsuario")]
-    public IActionResult AddUsuario(Usuarios usuarios)
+    [Route("AddDetalleCarrito")]
+    public IActionResult AddDetalleCarrito(DetalleCarrito detalleCarrito)
     {
         try
         {
-            var result = UsuariosServicios.InsertUsuario(usuarios);
+            var result = DetalleCarritoServicios.InsertDetalleCarrito(detalleCarrito);
             return Ok(result);
         }
         catch (Exception ex)

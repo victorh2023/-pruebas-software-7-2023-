@@ -27,7 +27,7 @@ namespace backend.servicios
 
         public static int InsertProducto(Producto producto)
         {
-            const string sql = "INSERT INTO [dbo].[PRODUCTO]([NOMBRE], [ID_CATEGORIA]) VALUES (@nombre, @id_categoria)  ";
+            const string sql = "INSERT INTO [dbo].[PRODUCTO]([NOMBRE], [ID_CATEGORIA]) VALUES (@nombre, @id_categoria) ";
 
             var parameters = new DynamicParameters();
             parameters.Add("@nombre", producto.Nombre, DbType.String);
