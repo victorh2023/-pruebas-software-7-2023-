@@ -7,6 +7,7 @@ namespace backend.servicios
 {
     public static class CarritoCompraServicios
     {
+
         public static IEnumerable<T> ObtenerTodo<T>()
         {
             const string sql = "select * from carrito_compra";
@@ -35,7 +36,6 @@ namespace backend.servicios
 
             var result = BDManager.GetInstance.SetData(sql, parameters);
             return result;
-        }
-
+        }  
     }
 }

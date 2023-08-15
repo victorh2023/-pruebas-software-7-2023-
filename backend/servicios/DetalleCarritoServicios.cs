@@ -34,7 +34,6 @@ namespace backend.servicios
             parameters.Add("id_producto", detalleCarrito.IdProducto, DbType.Int64);
             parameters.Add("id_carrito_compra", detalleCarrito.IdCarritoCompra, DbType.Int64);
 
-
             var result = BDManager.GetInstance.SetData(sql, parameters);
             return result;
         }

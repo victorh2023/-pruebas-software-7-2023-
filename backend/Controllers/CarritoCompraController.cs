@@ -19,7 +19,7 @@ public class CarritoCompraController : ControllerBase
         BDManager.GetInstance.ConnectionString = connectionString;
     }
 
-    //Muestra la lista de todos los usuruarios registrados
+    //Muestra la lista de todos los usuarios registrados
 
     [HttpGet]
     [Route("GetAllCarritoCompra")]
@@ -53,7 +53,7 @@ public class CarritoCompraController : ControllerBase
         }
     }
 
-    //para Adicionar usuarios en la base de datos
+    //para Adicionar Registro Usuarios en la base de datos
 
     [HttpPost]
     [Route("AddCarritoCompra")]

@@ -19,6 +19,8 @@ public class CategoriaProductoController : ControllerBase
         BDManager.GetInstance.ConnectionString = connectionString;
     }
 
+    //Muestra la lista de todos los usuarios registrados
+
     [HttpGet]
     [Route("GetAllCategoriaProducto")]
     public IActionResult GetAllCategoriaProducto()
@@ -33,6 +35,8 @@ public class CategoriaProductoController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
+
+    //insertando los Id muestra el Categoria en una tabla con sus registros
 
 
     [HttpGet]
@@ -49,6 +53,8 @@ public class CategoriaProductoController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
+
+    //para Adicionar Registro de Categoria en la base de datos
 
     [HttpPost]
     [Route("AddCategoriaProducto")]
