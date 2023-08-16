@@ -10,5 +10,9 @@ namespace backend.entidades
 
         public int IdCarritoCompra { get; set; }
 
+        public static implicit operator DetalleCarrito(DetalleCarrito v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

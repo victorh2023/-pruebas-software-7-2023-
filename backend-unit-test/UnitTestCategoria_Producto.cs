@@ -1,0 +1,41 @@
+﻿using backend.connection;
+using backend.entidades;
+using backend.servicios;
+
+
+namespace backend_unit_test
+{
+    public class UnitTestCategoria_Producto
+    {   
+        public UnitTestCategoria_Producto() 
+        {
+            BDManager.GetInstance.ConnectionString = "workstation id=DBVictorhugocondorib.mssql.somee.com;packet size=4096;user id=victorhugo2023_SQLLogin_1;pwd=535xd3kqwg;data source=DBVictorhugocondorib.mssql.somee.com;persist security info=False;initial catalog=DBVictorhugocondorib";
+        }
+
+
+        [Fact] 
+        public void CategoriaProducto_Get_Verificar_NotNull()
+        {
+            var result = CategoriaProductoServicios.ObtenerTodo<CategoriaProducto>();
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void CategoriaProducto_GetById_VerificarItem()
+        {
+            var result = CategoriaProductoServicios.ObtenerById<CategoriaProducto>(1);
+            Assert.Equal(1, result.Id);
+        }
+
+        [Fact]
+        public void CategoriaProducto_Insertar()
+        {
+            CategoriaProducto categoriaProductoTemp = new()
+            {
+                Nombre = "Nombre Test",
+            };
+            var result = CategoriaProductoServicios.InsertCategoriaProducto(categoriaProductoTemp);
+            Assert.Equal(1, result);
+        }
+    }
+}

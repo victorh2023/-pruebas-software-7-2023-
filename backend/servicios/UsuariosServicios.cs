@@ -36,13 +36,6 @@ namespace backend.servicios
 
             var result = BDManager.GetInstance.SetData(sql, parameters);
             return result;
-        }
-
-        //para actualizar Registro de Usuario
-
-
-
-        //Para Eliminar registro de Usuario
-
+        } 
     }
 }

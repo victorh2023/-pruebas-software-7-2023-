@@ -8,5 +8,9 @@ namespace backend.entidades
 
         public int IdUsuarios { get; set; }
 
+        public static implicit operator CarritoCompra(CarritoCompra v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

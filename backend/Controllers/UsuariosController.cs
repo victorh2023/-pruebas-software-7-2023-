@@ -69,14 +69,4 @@ public class UsuariosController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
-
-    //para actualizar Registro de Usuario
-
-
-
-    //Para Eliminar registro de Usuario
-
-    
-
-
 }
