@@ -1,0 +1,7 @@
+{
+  "name": "fronted-upc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
