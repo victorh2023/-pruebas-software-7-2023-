@@ -5,9 +5,9 @@ using backend.servicios;
 
 namespace backend_unit_test
 {
-    public class UnitTestDetalle_Carrito
+    public class UnitTestDetalleCarrito
     {   
-        public UnitTestDetalle_Carrito() 
+        public UnitTestDetalleCarrito() 
         {
             BDManager.GetInstance.ConnectionString = "workstation id=DBVictorhugocondorib.mssql.somee.com;packet size=4096;user id=victorhugo2023_SQLLogin_1;pwd=535xd3kqwg;data source=DBVictorhugocondorib.mssql.somee.com;persist security info=False;initial catalog=DBVictorhugocondorib";
         }

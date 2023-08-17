@@ -7,10 +7,5 @@ namespace backend.entidades
         public DateTime Fecha { get; set; }
 
         public int IdUsuarios { get; set; }
-
-        public static implicit operator CarritoCompra(CarritoCompra v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

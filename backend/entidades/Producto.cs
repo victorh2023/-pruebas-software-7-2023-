@@ -7,10 +7,5 @@ namespace backend.entidades
         public string Nombre { get; set; }
 
         public int IdCategoria { get; set; }
-
-        public static implicit operator Producto(Producto v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
