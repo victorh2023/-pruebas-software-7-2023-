@@ -6467,11 +6467,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend-unit-test\\backend-unit-test.csproj",
+      "projectUniqueName": "c:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend-unit-test\\backend-unit-test.csproj",
       "projectName": "backend-unit-test",
-      "projectPath": "C:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend-unit-test\\backend-unit-test.csproj",
+      "projectPath": "c:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend-unit-test\\backend-unit-test.csproj",
       "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend-unit-test\\obj\\",
+      "outputPath": "c:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend-unit-test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6488,8 +6488,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend\\backend.csproj": {
-              "projectPath": "C:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend\\backend.csproj"
+            "c:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend\\backend.csproj": {
+              "projectPath": "c:\\Users\\USUARIO\\Documents\\GitHub\\pruebas-software-7-2023\\backend\\backend.csproj"
             }
           }
         }
