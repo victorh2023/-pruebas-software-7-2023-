@@ -70,4 +70,36 @@ public class CategoriaProductoController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
+
+
+    [HttpPut]
+    [Route("UpdateCategoriaProducto")]
+    public IActionResult UpdateCategoriaProducto(CategoriaProducto categoriaProducto)
+    {
+        try
+        {
+            var result = CategoriaProductoServicios.UpdateCategoriaProducto(categoriaProducto);
+            return Ok(result);
+        }
+        catch (Exception err)
+        {
+            return StatusCode(500, err.Message);
+        }
+    }
+
+
+    [HttpDelete]
+    [Route("DeleteCategoriaProducto")]
+    public IActionResult DeleteCategoriaProducto([FromQuery] int id)
+    {
+        try
+        {
+            var result = CategoriaProductoServicios.DeleteCategoriaProducto(id);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
 }

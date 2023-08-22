@@ -37,5 +37,27 @@ namespace backend.servicios
             return result;
         }
 
+        public static int UpdateProducto(Producto producto)
+        {
+            const string sql = "UPDATE [PRODUCTO] SET [NOMBRE] = @nombre where [ID_CATEGORIA] = @id_categoria ";
+            var parameters = new DynamicParameters();
+            
+            parameters.Add("nombre", producto.Nombre, DbType.String);
+            parameters.Add("id_categoria", producto.IdCategoria, DbType.Int64);
+            
+            var result = BDManager.GetInstance.SetData(sql, parameters);
+            return result;
+        }  
+
+        public static int DeleteProducto(int id)
+        {
+            const string sql = "DELETE FROM PRODUCTO where ID = @Id";
+
+            var parameters = new DynamicParameters();
+            parameters.Add("id", id, DbType.Int64);
+            var result = BDManager.GetInstance.SetData(sql, parameters);
+            return result;
+        } 
+
     }
 }

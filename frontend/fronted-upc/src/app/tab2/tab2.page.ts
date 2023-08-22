@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CategoriaProducto } from '../entidades/CategoriaProducto';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,23 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  public Nombre = ""
+
+  public listaCategoriaProducto: CategoriaProducto[] = []
+
+  constructor() {
+
+    let categoriaProducto: CategoriaProducto = new CategoriaProducto();
+    categoriaProducto.Nombre = "Ropero"
+
+    this.listaCategoriaProducto.push(categoriaProducto)
+    this.listaCategoriaProducto.push(categoriaProducto)
+
+  }
+
+
+  public addCategoriaProducto(){
+
+  }
 
 }

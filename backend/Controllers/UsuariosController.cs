@@ -1,10 +1,11 @@
 using backend.connection;
 using backend.entidades;
 using backend.servicios;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers;
-
+[EnableCors("CorsDev")]
 [ApiController]
 [Route("api/[controller]")]
 public class UsuariosController : ControllerBase
@@ -62,6 +63,38 @@ public class UsuariosController : ControllerBase
         try
         {
             var result = UsuariosServicios.InsertUsuario(usuarios);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+
+
+    [HttpPut]
+    [Route("UpdateUsuario")]
+    public IActionResult UpdateUsuario(Usuarios usuarios)
+    {
+        try
+        {
+            var result = UsuariosServicios.UpdateUsuario(usuarios);
+            return Ok(result);
+        }
+        catch (Exception err)
+        {
+            return StatusCode(500, err.Message);
+        }
+    }
+
+
+    [HttpDelete]
+    [Route("DeleteUsuario")]
+    public IActionResult DeleteUsuario([FromQuery] int id)
+    {
+        try
+        {
+            var result = UsuariosServicios.DeleteUsuario(id);
             return Ok(result);
         }
         catch (Exception ex)
