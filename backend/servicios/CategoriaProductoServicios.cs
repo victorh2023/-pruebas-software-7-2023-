@@ -9,7 +9,7 @@ namespace backend.servicios
     {
         public static IEnumerable<T> ObtenerTodo<T>()
         {
-            const string sql = "select * from categoria_producto";
+            const string sql = "select top 5 * from categoria_producto where estado_registro = 1 order by id desc";
             return BDManager.GetInstance.GetData<T>(sql);//Dapper
         }
 
@@ -25,6 +25,8 @@ namespace backend.servicios
             return result.FirstOrDefault();
         }
 
+
+
         public static int InsertCategoriaProducto(CategoriaProducto categoriaProducto)
         {
             const string sql = "INSERT INTO [dbo].[CATEGORIA_PRODUCTO]([NOMBRE]) VALUES (@nombre) ";
@@ -35,7 +37,6 @@ namespace backend.servicios
             var result = BDManager.GetInstance.SetData(sql, parameters);
             return result;
         }
-
 
         public static int UpdateCategoriaProducto(CategoriaProducto categoriaProducto)
         {
@@ -58,6 +59,5 @@ namespace backend.servicios
             var result = BDManager.GetInstance.SetData(sql, parameters);
             return result;
         } 
-
     }
 }

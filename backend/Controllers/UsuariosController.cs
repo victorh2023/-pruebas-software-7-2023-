@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers;
-[EnableCors("CorsDev")]
+[EnableCors("DevelopmentCors")]
 [ApiController]
 [Route("api/[controller]")]
 public class UsuariosController : ControllerBase
@@ -20,7 +20,7 @@ public class UsuariosController : ControllerBase
         BDManager.GetInstance.ConnectionString = connectionString;
     }
 
-    //Muestra la lista de todos los usuruarios registrados
+    //Muestra la lista de todos los usuarios registrados en la base de datos
 
     [HttpGet]
     [Route("GetAllUsuarios")]
@@ -37,7 +37,7 @@ public class UsuariosController : ControllerBase
         }
     }
 
-    //insertando los Id muestra el usuario en una tabla con sus registros
+    //para mostrar un usuario, en una tabla con sus registros colocando el ID
 
     [HttpGet]
     [Route("GetUsuariosById")]
@@ -54,7 +54,7 @@ public class UsuariosController : ControllerBase
         }
     }
 
-    //para Adicionar usuarios en la base de datos
+    //para insertar un nuevo usuarios en la base de datos
 
     [HttpPost]
     [Route("AddUsuario")]
@@ -70,6 +70,8 @@ public class UsuariosController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
+
+    //para Actualizar un registro de un usuario en la base de datos
 
 
     [HttpPut]
@@ -87,6 +89,7 @@ public class UsuariosController : ControllerBase
         }
     }
 
+    //para Eliminar un registro de un Usuario en la base de datos, con llamar un Id
 
     [HttpDelete]
     [Route("DeleteUsuario")]

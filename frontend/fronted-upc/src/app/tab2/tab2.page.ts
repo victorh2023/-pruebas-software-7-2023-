@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CategoriaProducto } from '../entidades/CategoriaProducto';
+import { CategoriaProductoService } from '../servicios-backend/categoria-producto/categoria-producto.service';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-tab2',
@@ -8,23 +10,56 @@ import { CategoriaProducto } from '../entidades/CategoriaProducto';
 })
 export class Tab2Page {
 
-  public Nombre = ""
+  public Nombre  = ""
 
-  public listaCategoriaProducto: CategoriaProducto[] = []
+  public listaCategoria: CategoriaProducto[] = []
 
-  constructor() {
-
-    let categoriaProducto: CategoriaProducto = new CategoriaProducto();
-    categoriaProducto.Nombre = "Ropero"
-
-    this.listaCategoriaProducto.push(categoriaProducto)
-    this.listaCategoriaProducto.push(categoriaProducto)
-
+  constructor(private categoriaProductoService:CategoriaProductoService) {
+    this.GetAllFromBackend();
   }
 
+  private GetAllFromBackend(){
+    this.categoriaProductoService.GetCategoriaProducto().subscribe({
+        next: (response: HttpResponse<any>) => {
+            this.listaCategoria = response.body;
+            console.log(this.listaCategoria)
+        },
+        error: (error: any) => {
+            console.log(error);
+        },
+        complete: () => {
+            //console.log('complete - this.getUsuarios()');
+        },
+  });
+  }
 
-  public addCategoriaProducto(){
+  public addCategoria(){
+   this.AddCategoriaProductoFromBackend(this.Nombre)
+  }
 
+  private AddCategoriaProductoFromBackend(Nombre: string){
+
+    var categoriaEntidad = new CategoriaProducto(0, Nombre);
+    
+
+    this.categoriaProductoService.AddCategoriaProducto(categoriaEntidad).subscribe({
+      next: (response: HttpResponse<any>) => {
+          console.log(response.body)//1
+          if(response.body == 1){
+              alert("Se agrego la CATEGORIA con exito :)");
+              this.GetAllFromBackend();//Se actualize el listado
+              this.Nombre  = "";
+          }else{
+              alert("Al agregar la CATEGORIA fallo exito :(");
+          }
+      },
+      error: (error: any) => {
+          console.log(error);
+      },
+      complete: () => {
+          //console.log('complete - this.AddUsuario()');
+      },
+  });
   }
 
 }

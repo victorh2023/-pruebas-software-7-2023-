@@ -32,7 +32,7 @@ namespace backend_unit_test
             {
                 NombreCompleto = "Nombre Test",
                 UserName = "UserName Test",
-                Password = "password Test"
+                Password = "Password Test"
             };
             var result = UsuariosServicios.InsertUsuario(usuarioTemp);
             Assert.Equal(1, result); 

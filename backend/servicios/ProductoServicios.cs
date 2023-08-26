@@ -9,7 +9,7 @@ namespace backend.servicios
     {
         public static IEnumerable<T> ObtenerTodo<T>()
         {
-            const string sql = "select * from PRODUCTO";
+            const string sql = "select top 5 * from producto where estado_registro = 1 order by id desc";
             return BDManager.GetInstance.GetData<T>(sql);//Dapper
         }
 
@@ -30,7 +30,7 @@ namespace backend.servicios
             const string sql = "INSERT INTO [dbo].[PRODUCTO]([NOMBRE], [ID_CATEGORIA]) VALUES (@nombre, @id_categoria) ";
 
             var parameters = new DynamicParameters();
-            parameters.Add("@nombre", producto.Nombre, DbType.String);
+            parameters.Add("@nombre", producto.nombre, DbType.String);
             parameters.Add("@id_categoria", producto.IdCategoria, DbType.Int64);
 
             var result = BDManager.GetInstance.SetData(sql, parameters);
@@ -42,7 +42,7 @@ namespace backend.servicios
             const string sql = "UPDATE [PRODUCTO] SET [NOMBRE] = @nombre where [ID_CATEGORIA] = @id_categoria ";
             var parameters = new DynamicParameters();
             
-            parameters.Add("nombre", producto.Nombre, DbType.String);
+            parameters.Add("nombre", producto.nombre, DbType.String);
             parameters.Add("id_categoria", producto.IdCategoria, DbType.Int64);
             
             var result = BDManager.GetInstance.SetData(sql, parameters);
