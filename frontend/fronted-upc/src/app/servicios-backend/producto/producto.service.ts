@@ -16,14 +16,14 @@ export class ProductoService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public GetProducto(): Observable<HttpResponse<any>> {
+  public GetAll(): Observable<HttpResponse<any>> {
     return this.httpClient
       .get<any>(this.URL_GET,
         { observe: 'response' })
       .pipe();
   }
 
-  public AddProducto(entidad: Producto): Observable<HttpResponse<any>> {
+  public Add(entidad: Producto): Observable<HttpResponse<any>> {
     return this.httpClient
       .post<any>(this.URL_ADD_PRODUCTO, entidad,
         { observe: 'response' })

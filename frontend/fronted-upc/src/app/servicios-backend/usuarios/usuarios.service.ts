@@ -16,14 +16,14 @@ export class UsuariosService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public GetUsuarios(): Observable<HttpResponse<any>> {
+  public GetAll(): Observable<HttpResponse<any>> {
     return this.httpClient
       .get<any>(this.URL_GET,
         { observe: 'response' })
       .pipe();
   }
 
-  public AddUsuario(entidad: Usuarios): Observable<HttpResponse<any>> {
+  public Add(entidad: Usuarios): Observable<HttpResponse<any>> {
     return this.httpClient
       .post<any>(this.URL_ADD_USUARIO, entidad,
         { observe: 'response' })

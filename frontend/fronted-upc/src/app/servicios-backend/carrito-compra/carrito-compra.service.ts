@@ -16,14 +16,14 @@ export class CarritoCompraService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public GetCarritoCompra(): Observable<HttpResponse<any>> {
+  public GetAll(): Observable<HttpResponse<any>> {
     return this.httpClient
       .get<any>(this.URL_GET,
         { observe: 'response' })
       .pipe();
   }
 
-  public AddCarritoCompra(entidad: CarritoCompra): Observable<HttpResponse<any>> {
+  public Add(entidad: CarritoCompra): Observable<HttpResponse<any>> {
     return this.httpClient
       .post<any>(this.URL_ADD_CARRITO_COMPRA, entidad,
         { observe: 'response' })

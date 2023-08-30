@@ -27,12 +27,12 @@ namespace backend.servicios
 
         public static int InsertUsuario(Usuarios usuarios)
         {
-            const string sql = "INSERT INTO [dbo].[USUARIOS]([USER_NAME], [NOMBRE_COMPLETO], [PASSWORD]) VALUES (@user_name, @nombre_completo, @password) ";
+            const string sql = "INSERT INTO [dbo].[USUARIOS]([NOMBRE_COMPLETO], [USER_NAME], [PASSWORD]) VALUES (@nombre_completo, @user_name, @password) ";
 
             var parameters = new DynamicParameters();
-            parameters.Add("user_name", usuarios.userName, DbType.String);
-            parameters.Add("nombre_completo", usuarios.nombreCompleto, DbType.String);
-            parameters.Add("password", usuarios.password, DbType.String);
+            parameters.Add("nombre_completo", usuarios.NombreCompleto, DbType.String);
+            parameters.Add("user_name", usuarios.UserName, DbType.String);
+            parameters.Add("password", usuarios.Password, DbType.String);
 
             var result = BDManager.GetInstance.SetData(sql, parameters);
             return result;
@@ -43,9 +43,9 @@ namespace backend.servicios
             const string sql = "UPDATE [USUARIOS] SET [USER_NAME] = @user_name, [NOMBRE_COMPLETO] = @nombre_completo, [PASSWORD] = @password where [ID] = @id ";
             var parameters = new DynamicParameters();
             parameters.Add("id", usuarios.Id, DbType.Int64);
-            parameters.Add("user_name", usuarios.userName, DbType.String);
-            parameters.Add("nombre_completo", usuarios.nombreCompleto, DbType.String);
-            parameters.Add("password", usuarios.password, DbType.String);
+            parameters.Add("user_name", usuarios.UserName, DbType.String);
+            parameters.Add("nombre_completo", usuarios.NombreCompleto, DbType.String);
+            parameters.Add("password", usuarios.Password, DbType.String);
 
             var result = BDManager.GetInstance.SetData(sql, parameters);
             return result;

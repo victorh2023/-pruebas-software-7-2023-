@@ -8,27 +8,27 @@ namespace backend.Controllers;
 [EnableCors("DevelopmentCors")]
 [ApiController]
 [Route("api/[controller]")]
-public class DetalleCarritoController : ControllerBase
+public class ReservarCitaController : ControllerBase
 {
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
 
-    public DetalleCarritoController(IConfiguration configuration)
+    public ReservarCitaController(IConfiguration configuration)
     {
         _configuration = configuration;
         connectionString = _configuration["SqlConnectionString:DefaultConnection"];
         BDManager.GetInstance.ConnectionString = connectionString;
     }
 
-    //Muestra la lista de todos los usuruarios registrados
+    //Muestra la lista de todos los usuarios registrados
 
     [HttpGet]
-    [Route("GetAllDetalleCarrito")]
-    public IActionResult GetAllDetalleCarrito()
+    [Route("GetAllReservarCita")]
+    public IActionResult GetAllReservarCita()
     {
         try
         {
-            var result = DetalleCarritoServicios.ObtenerTodo<DetalleCarrito>();
+            var result = ReservarCitaServicios.ObtenerTodo<ReservarCita>();
             return Ok(result);
         }
         catch (Exception ex)
@@ -40,12 +40,12 @@ public class DetalleCarritoController : ControllerBase
     //insertando los Id muestra el usuario en una tabla con sus registros
 
     [HttpGet]
-    [Route("GetDetalleCarritoById")]
-    public IActionResult GetDetalleCarritoById([FromQuery] int id)
+    [Route("GetReservarCitaById")]
+    public IActionResult GetReservarCitaById([FromQuery] int id)
     {
         try
         {
-            var result = DetalleCarritoServicios.ObtenerById<DetalleCarrito>(id);
+            var result = ReservarCitaServicios.ObtenerById<ReservarCita>(id);
             return Ok(result);
         }
         catch (Exception ex)
@@ -54,15 +54,15 @@ public class DetalleCarritoController : ControllerBase
         }
     }
 
-    //para Adicionar usuarios en la base de datos
+    //para Adicionar Registro Usuarios en la base de datos
 
     [HttpPost]
-    [Route("AddDetalleCarrito")]
-    public IActionResult AddDetalleCarrito(DetalleCarrito detalleCarrito)
+    [Route("AddReservarCita")]
+    public IActionResult AddReservarCita(ReservarCita reservarCita)
     {
         try
         {
-            var result = DetalleCarritoServicios.InsertDetalleCarrito(detalleCarrito);
+            var result = ReservarCitaServicios.InsertReservarCita(reservarCita);
             return Ok(result);
         }
         catch (Exception ex)
@@ -72,12 +72,12 @@ public class DetalleCarritoController : ControllerBase
     }
 
     [HttpPut]
-    [Route("UpdateDetalleCarrito")]
-    public IActionResult UpdateDetalleCarrito(DetalleCarrito detalleCarrito)
+    [Route("UpdateReservarCita")]
+    public IActionResult UpdateReservarCita(ReservarCita reservarCita)
     {
         try
         {
-            var result = DetalleCarritoServicios.UpdateDetalleCarrito(detalleCarrito);
+            var result = ReservarCitaServicios.UpdateReservarCita(reservarCita);
             return Ok(result);
         }
         catch (Exception err)
@@ -88,12 +88,12 @@ public class DetalleCarritoController : ControllerBase
 
 
     [HttpDelete]
-    [Route("DeleteDetalleCarrito")]
-    public IActionResult DeleteDetalleCarrito([FromQuery] int id)
+    [Route("DeleteReservarCita")]
+    public IActionResult DeleteReservarCita([FromQuery] int id)
     {
         try
         {
-            var result = DetalleCarritoServicios.DeleteDetalleCarrito(id);
+            var result = ReservarCitaServicios.DeleteReservarCita(id);
             return Ok(result);
         }
         catch (Exception ex)

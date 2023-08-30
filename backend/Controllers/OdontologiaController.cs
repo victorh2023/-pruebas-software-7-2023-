@@ -8,27 +8,27 @@ namespace backend.Controllers;
 [EnableCors("DevelopmentCors")]
 [ApiController]
 [Route("api/[controller]")]
-public class DetalleCarritoController : ControllerBase
+public class OdontologiaController : ControllerBase
 {
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
 
-    public DetalleCarritoController(IConfiguration configuration)
+    public OdontologiaController(IConfiguration configuration)
     {
         _configuration = configuration;
         connectionString = _configuration["SqlConnectionString:DefaultConnection"];
         BDManager.GetInstance.ConnectionString = connectionString;
     }
 
-    //Muestra la lista de todos los usuruarios registrados
+    //Muestra la lista de todos los usuarios registrados
 
     [HttpGet]
-    [Route("GetAllDetalleCarrito")]
-    public IActionResult GetAllDetalleCarrito()
+    [Route("GetAllOdontologia")]
+    public IActionResult GetAllOdontologia()
     {
         try
         {
-            var result = DetalleCarritoServicios.ObtenerTodo<DetalleCarrito>();
+            var result = OdontologiaServicios.ObtenerTodo<Odontologia>();
             return Ok(result);
         }
         catch (Exception ex)
@@ -37,15 +37,16 @@ public class DetalleCarritoController : ControllerBase
         }
     }
 
-    //insertando los Id muestra el usuario en una tabla con sus registros
+    //insertando los Id muestra el Categoria en una tabla con sus registros
+
 
     [HttpGet]
-    [Route("GetDetalleCarritoById")]
-    public IActionResult GetDetalleCarritoById([FromQuery] int id)
+    [Route("GetOdontologiaById")]
+    public IActionResult GetOdontologiaById([FromQuery] int id)
     {
         try
         {
-            var result = DetalleCarritoServicios.ObtenerById<DetalleCarrito>(id);
+            var result = OdontologiaServicios.ObtenerById<Odontologia>(id);
             return Ok(result);
         }
         catch (Exception ex)
@@ -54,15 +55,15 @@ public class DetalleCarritoController : ControllerBase
         }
     }
 
-    //para Adicionar usuarios en la base de datos
+    //para Adicionar Registro de Categoria en la base de datos
 
     [HttpPost]
-    [Route("AddDetalleCarrito")]
-    public IActionResult AddDetalleCarrito(DetalleCarrito detalleCarrito)
+    [Route("AddOdontologia")]
+    public IActionResult AddOdontologia(Odontologia odontologia)
     {
         try
         {
-            var result = DetalleCarritoServicios.InsertDetalleCarrito(detalleCarrito);
+            var result = OdontologiaServicios.InsertOdontologia(odontologia);
             return Ok(result);
         }
         catch (Exception ex)
@@ -71,13 +72,14 @@ public class DetalleCarritoController : ControllerBase
         }
     }
 
+
     [HttpPut]
-    [Route("UpdateDetalleCarrito")]
-    public IActionResult UpdateDetalleCarrito(DetalleCarrito detalleCarrito)
+    [Route("UpdateOdontologia")]
+    public IActionResult UpdateOdontologia(Odontologia odontologia)
     {
         try
         {
-            var result = DetalleCarritoServicios.UpdateDetalleCarrito(detalleCarrito);
+            var result = OdontologiaServicios.UpdateOdontologia(odontologia);
             return Ok(result);
         }
         catch (Exception err)
@@ -88,12 +90,12 @@ public class DetalleCarritoController : ControllerBase
 
 
     [HttpDelete]
-    [Route("DeleteDetalleCarrito")]
-    public IActionResult DeleteDetalleCarrito([FromQuery] int id)
+    [Route("DeleteOdontologia")]
+    public IActionResult DeleteOdontologia([FromQuery] int id)
     {
         try
         {
-            var result = DetalleCarritoServicios.DeleteDetalleCarrito(id);
+            var result = OdontologiaServicios.DeleteOdontologia(id);
             return Ok(result);
         }
         catch (Exception ex)

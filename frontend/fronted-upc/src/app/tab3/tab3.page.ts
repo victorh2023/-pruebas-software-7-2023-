@@ -10,17 +10,17 @@ import { HttpResponse } from '@angular/common/http';
 })
 export class Tab3Page {
 
-  public Nombre = ""
-  public IdCategoria = ""
+  public nombre = ""
+  public idCategoria = ""
 
   public listaProducto: Producto[] = []
 
-  constructor(private ProductoService: ProductoService) {
+  constructor(private productoService: ProductoService) {
     this.GetProductoFromBackend();
   }
 
   private GetProductoFromBackend(){
-    this.ProductoService.GetProducto().subscribe({
+    this.productoService.GetAll().subscribe({
         next: (response: HttpResponse<any>) => {
             this.listaProducto = response.body;
             console.log(this.listaProducto)
@@ -34,25 +34,24 @@ export class Tab3Page {
     });
   }
 
-  public AddProducto(){
-
-    this.AddProductoFromBackend(this.Nombre, this.IdCategoria)
+  public addProducto(){
+    this.AddProductoFromBackend(this.nombre, this.idCategoria)
   }
 
-  private AddProductoFromBackend(Nombre: string, IdCategoria: string){
+  private AddProductoFromBackend(nombre: string, idCategoria: string){
 
-    var productoEntidad = new Producto();
-    productoEntidad.Nombre = Nombre;
-    productoEntidad.IdCategoria = IdCategoria;
+    var usuarioEntidad = new Producto();
+    usuarioEntidad.nombre = nombre;
+    usuarioEntidad.idCategoria = idCategoria;
 
-    this.ProductoService.AddProducto(productoEntidad).subscribe({
+    this.productoService.Add(usuarioEntidad).subscribe({
       next: (response: HttpResponse<any>) => {
           console.log(response.body)//1
           if(response.body == 1){
               alert("Se agrego un PRODUCTO con exito ");
               this.GetProductoFromBackend();//Se actualize el listado
-              this.Nombre = "";
-              this.IdCategoria = "";
+              this.nombre = "";
+              this.idCategoria = "";
           }else{
               alert("Al agregar el PRODUCTO fallo exito ");
           }

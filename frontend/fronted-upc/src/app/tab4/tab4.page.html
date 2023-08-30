@@ -14,14 +14,14 @@
   </ion-header>
 
 <ion-item>
-  <ion-input type="text" placeholder="Ingrese su fecha" [(ngModel)]="Fecha"></ion-input>
-  <ion-input type="text" placeholder="Ingrese su IdUsuario" [(ngModel)]="IdUsuario"></ion-input>
-  <ion-button (click)="addCarritoCompra()">Agregar Producto</ion-button>
+  <ion-input id="fecha" type="date" placeholder="Ingrese su fecha" [(ngModel)]="fecha"></ion-input>
+  <ion-input id="idUsuario"type="text" placeholder="Ingrese su IdUsuario" [(ngModel)]="idUsuario"></ion-input>
+  <ion-button id="addCarritoCompra" (click)="addCarritoCompra()">Agregar Carrito</ion-button>
 </ion-item>
 <br>
 <ion-list>
   <ion-item *ngFor="let item of listaCarritoCompra">
-    <b>Fecha</b>:{{item.Fecha}}; <b>IdUsuario</b>:{{item.IdUsuario}};
+    <b>Fecha</b>:{{item.fecha}}; <b>Id Usuario</b>:{{item.idUsuario}};
   </ion-item>
 </ion-list>
 

@@ -25,8 +25,6 @@ namespace backend.servicios
             return result.FirstOrDefault();
         }
 
-
-
         public static int InsertCategoriaProducto(CategoriaProducto categoriaProducto)
         {
             const string sql = "INSERT INTO [dbo].[CATEGORIA_PRODUCTO]([NOMBRE]) VALUES (@nombre) ";

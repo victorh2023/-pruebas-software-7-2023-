@@ -10,17 +10,17 @@ import { HttpResponse } from '@angular/common/http';
 })
 export class Tab4Page {
 
-  public Fecha = ""
-  public IdUsuario = ""
+  public fecha = ""
+  public idUsuario = ""
 
   public listaCarritoCompra: CarritoCompra[] = []
 
-  constructor(private CarritoCompraService: CarritoCompraService) {
-    this.getCarritoCompraFromBackend();
+  constructor(private carritoCompraService: CarritoCompraService) {
+    this.GetCarritoCompraFromBackend();
   }
 
-  private getCarritoCompraFromBackend(){
-    this.CarritoCompraService.GetCarritoCompra().subscribe({
+  private GetCarritoCompraFromBackend(){
+    this.carritoCompraService.GetAll().subscribe({
         next: (response: HttpResponse<any>) => {
             this.listaCarritoCompra = response.body;
             console.log(this.listaCarritoCompra)
@@ -35,24 +35,23 @@ export class Tab4Page {
   }
 
   public addCarritoCompra(){
-
-    this.AddCarritoCompraFromBackend(this.Fecha, this.IdUsuario)
+    this.AddCarritoCompraFromBackend(this.fecha, this.idUsuario)
   }
 
-  private AddCarritoCompraFromBackend(Fecha: string, IdUsuario: string){
+  private AddCarritoCompraFromBackend(fecha: string, idUsuario: string){
 
-    var CarritoCompraEntidad = new CarritoCompra();
-    CarritoCompraEntidad.Fecha = Fecha;
-    CarritoCompraEntidad.IdUsuario = IdUsuario;
+    var usuarioEntidad = new CarritoCompra();
+    usuarioEntidad.fecha = fecha;
+    usuarioEntidad.idUsuario = idUsuario;
 
-    this.CarritoCompraService.AddCarritoCompra(CarritoCompraEntidad).subscribe({
+    this.carritoCompraService.Add(usuarioEntidad).subscribe({
       next: (response: HttpResponse<any>) => {
           console.log(response.body)//1
           if(response.body == 1){
               alert("Se agrego un CARRITO COMPRA con exito ");
-              this.getCarritoCompraFromBackend();//Se actualize el listado
-              this.Fecha = "";
-              this.IdUsuario = "";
+              this.GetCarritoCompraFromBackend();//Se actualize el listado
+              this.fecha = "";
+              this.idUsuario = "";
           }else{
               alert("Al agregar el CARRITO COMPRA fallo exito ");
           }

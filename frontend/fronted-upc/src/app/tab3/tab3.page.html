@@ -14,14 +14,14 @@
   </ion-header>
 
 <ion-item>
-  <ion-input id="Nombre" type="text" placeholder="Ingrese su Producto" [(ngModel)]="Nombre"></ion-input>
-  <ion-input id="IdCategoria" type="text" placeholder="Ingrese su IdCategoria" [(ngModel)]="IdCategoria"></ion-input>
-  <ion-button id="AddProducto"(click)="AddProducto()">Agregar Producto</ion-button>
+  <ion-input id="nombre" type="text" placeholder="Ingrese su Producto" [(ngModel)]="nombre"></ion-input>
+  <ion-input id="idCategoria" type="text" placeholder="Ingrese su IdCategoria" [(ngModel)]="idCategoria"></ion-input>
+  <ion-button id="addProducto"(click)="addProducto()">Agregar Producto</ion-button>
 </ion-item>
 <br>
 <ion-list>
   <ion-item *ngFor="let item of listaProducto">
-    <b>Nombre</b>:{{item.Nombre}}; <b>IdCategoria</b>:{{item.IdCategoria}};
+    <b>nombre</b>:{{item.nombre}}; <b>idCategoria</b>:{{item.idCategoria}};
   </ion-item>
 </ion-list>
 

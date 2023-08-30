@@ -30,7 +30,7 @@ export class Tab1Page {
   }
 
   private GetUsuariosFromBackend(){
-    this.usuariosService.GetUsuarios().subscribe({
+    this.usuariosService.GetAll().subscribe({
         next: (response: HttpResponse<any>) => {
             this.listaUsuarios = response.body;
             console.log(this.listaUsuarios)
@@ -44,19 +44,18 @@ export class Tab1Page {
     });
   }
 
-  public AddUsuario(){
-
-   this.AddUsuarioFromBackend(this.nombreCompleto, this.userName, this.password)
+  public addUsuario(){
+   this.addUsuarioFromBackend(this.nombreCompleto, this.userName, this.password)
   }
 
-  private AddUsuarioFromBackend(nombreCompleto: string, userName: string, password: string){
+  private addUsuarioFromBackend(nombreCompleto: string, userName: string, password: string){
 
     var usuarioEntidad = new Usuarios();
     usuarioEntidad.nombreCompleto = nombreCompleto;
     usuarioEntidad.userName = userName;
     usuarioEntidad.password = password;
 
-    this.usuariosService.AddUsuario(usuarioEntidad).subscribe({
+    this.usuariosService.Add(usuarioEntidad).subscribe({
       next: (response: HttpResponse<any>) => {
           console.log(response.body)//1
           if(response.body == 1){

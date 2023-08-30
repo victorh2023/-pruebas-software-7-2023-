@@ -1,4 +1,4 @@
 export class CarritoCompra{
-    public Fecha: string = "";
-    public IdUsuario: string = ""
+    public fecha: string = "";
+    public idUsuario: string = "";
   }

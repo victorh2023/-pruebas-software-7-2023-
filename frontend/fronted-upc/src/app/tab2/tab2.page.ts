@@ -10,16 +10,15 @@ import { HttpResponse } from '@angular/common/http';
 })
 export class Tab2Page {
 
-  public Nombre  = ""
-
+  public nombre = ""
   public listaCategoria: CategoriaProducto[] = []
 
-  constructor(private categoriaProductoService:CategoriaProductoService) {
-    this.GetAllFromBackend();
+  constructor(private categoriaProductoService: CategoriaProductoService) {
+    this.GetCategoriaFromBackend();
   }
 
-  private GetAllFromBackend(){
-    this.categoriaProductoService.GetCategoriaProducto().subscribe({
+  private GetCategoriaFromBackend(){
+    this.categoriaProductoService.GetAll().subscribe({
         next: (response: HttpResponse<any>) => {
             this.listaCategoria = response.body;
             console.log(this.listaCategoria)
@@ -34,21 +33,21 @@ export class Tab2Page {
   }
 
   public addCategoria(){
-   this.AddCategoriaProductoFromBackend(this.Nombre)
+   this.AddCategoriaProductoFromBackend(this.nombre)
   }
 
-  private AddCategoriaProductoFromBackend(Nombre: string){
+  private AddCategoriaProductoFromBackend(nombre: string){
 
-    var categoriaEntidad = new CategoriaProducto(0, Nombre);
-    
+    var usuarioEntidad = new CategoriaProducto();
+    usuarioEntidad.nombre = nombre;
 
-    this.categoriaProductoService.AddCategoriaProducto(categoriaEntidad).subscribe({
+    this.categoriaProductoService.Add(usuarioEntidad).subscribe({
       next: (response: HttpResponse<any>) => {
           console.log(response.body)//1
           if(response.body == 1){
               alert("Se agrego la CATEGORIA con exito :)");
-              this.GetAllFromBackend();//Se actualize el listado
-              this.Nombre  = "";
+              this.GetCategoriaFromBackend();//Se actualize el listado
+              this.nombre = "";
           }else{
               alert("Al agregar la CATEGORIA fallo exito :(");
           }
