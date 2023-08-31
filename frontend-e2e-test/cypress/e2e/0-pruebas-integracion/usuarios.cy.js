@@ -16,7 +16,7 @@ describe("CRUD Usuarios", () => {//Titulo
 
     //Servicio API - AddUsuario(entidad)
     it("AddUsuario(entidad)", () => {
-        cy.get("ion-tab-button").eq(1).click(); // click en el TAB de Usuarios
+        cy.get("ion-tab-button").eq(0).click(); // click en el TAB de Usuarios
         cy.wait(1000);//Esperar 1 seg.
 
         cy.get("#nombreCompleto")

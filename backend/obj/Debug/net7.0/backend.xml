@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>backend</name>
+    </assembly>
+    <members>
+        <member name="P:backend.entidades.CarritoCompra.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+    </members>
+</doc>
