@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Reservar Cita
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Reservar Cita</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-input id="fechaCita" type="date" placeholder="Ingrese la fechaCita" [(ngModel)]="fechaCita"></ion-input>
+    <ion-input id="horaCita" type="date" placeholder="Ingrese la horaCita" [(ngModel)]="horaCita"></ion-input>
+    <ion-input id="motivoConsulta" type="text" placeholder="Ingrese el motivoConsulta" [(ngModel)]="motivoConsulta"></ion-input>
+    <ion-input id="idUsuarios" type="text" placeholder="Ingrese su idUsuarios" [(ngModel)]="idUsuarios"></ion-input>
+    <ion-input id="idOdontologia" type="text" placeholder="Ingrese su idOdontologia" [(ngModel)]="idOdontologia"></ion-input>
+    <ion-button id="addReservarCita" (click)="addReservarCita()">Agregar Cita Medica</ion-button>
+  </ion-item>
+  <br>
+  <ion-list>
+    <ion-item *ngFor="let item of listaReservarCita">
+      <b>fechaCita</b>:{{item.fechaCita}}; <b>horaCita</b>:{{item.horaCita}}; <b>motivoConsulta</b>:{{item.motivoConsulta}}; <b>idUsuarios</b>:{{item.idUsuarios}}; <b>idOdontologia</b>:{{item.idOdontologia}}
+    </ion-item>
+  </ion-list>
+
+</ion-content>

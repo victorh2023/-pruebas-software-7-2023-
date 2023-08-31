@@ -11,11 +11,12 @@ import { HttpResponse } from '@angular/common/http';
 export class Tab4Page {
 
   public fecha = ""
-  public idUsuario = ""
-
+  public idUsuarios = ""
+  
   public listaCarritoCompra: CarritoCompra[] = []
 
   constructor(private carritoCompraService: CarritoCompraService) {
+
     this.GetCarritoCompraFromBackend();
   }
 
@@ -35,25 +36,25 @@ export class Tab4Page {
   }
 
   public addCarritoCompra(){
-    this.AddCarritoCompraFromBackend(this.fecha, this.idUsuario)
+   this.addCarritoCompraFromBackend(this.fecha, this.idUsuarios)
   }
 
-  private AddCarritoCompraFromBackend(fecha: string, idUsuario: string){
+  private addCarritoCompraFromBackend(fecha: string, idUsuarios: string){
 
-    var usuarioEntidad = new CarritoCompra();
-    usuarioEntidad.fecha = fecha;
-    usuarioEntidad.idUsuario = idUsuario;
+    var carritoCompraEntidad = new CarritoCompra();
+    carritoCompraEntidad.fecha = fecha;
+    carritoCompraEntidad.idUsuarios = idUsuarios;
 
-    this.carritoCompraService.Add(usuarioEntidad).subscribe({
+    this.carritoCompraService.Add(carritoCompraEntidad).subscribe({
       next: (response: HttpResponse<any>) => {
           console.log(response.body)//1
           if(response.body == 1){
-              alert("Se agrego un CARRITO COMPRA con exito ");
+              alert("Se agrego la carrito con exito");
               this.GetCarritoCompraFromBackend();//Se actualize el listado
               this.fecha = "";
-              this.idUsuario = "";
+              this.idUsuarios = "";
           }else{
-              alert("Al agregar el CARRITO COMPRA fallo exito ");
+              alert("Al agregar la Carrito fallo exito");
           }
       },
       error: (error: any) => {

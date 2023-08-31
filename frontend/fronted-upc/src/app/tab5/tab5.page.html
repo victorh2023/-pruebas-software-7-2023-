@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Odontologia
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Odontologia</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-input id="nombreCompleto" type="text" placeholder="Ingrese el Nombre Completo" [(ngModel)]="nombreCompleto"></ion-input>
+    <br>
+    <ion-input id="direccion" type="text" placeholder="Ingrese su Direccion" [(ngModel)]="direccion"></ion-input>
+    <br>
+    <ion-input id="telefono" type="text" placeholder="Ingrese su Telefono" [(ngModel)]="telefono"></ion-input>
+    <br>
+    <ion-input id="especialidad" type="text" placeholder="Ingrese la Especialidad" [(ngModel)]="especialidad"></ion-input>
+    <ion-button id="addOdontologia" (click)="addOdontologia()">Agregar Odontologo</ion-button>
+  </ion-item>
+  <br>
+  <ion-list>
+    <ion-item *ngFor="let item of listaOdontologia">
+      <b>nombre</b>:{{item.nombreCompleto}}; <b>direccion</b>:{{item.direccion}}; <b>telefono</b>:{{item.telefono}}; <b>especialidad</b>:{{item.especialidad}}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
