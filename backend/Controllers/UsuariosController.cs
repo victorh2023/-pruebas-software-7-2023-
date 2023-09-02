@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers;
+/// <summary>
+/// hola
+/// </summary>
 [EnableCors("DevelopmentCors")]
 [ApiController]
 [Route("api/[controller]")]
@@ -12,6 +15,9 @@ public class UsuariosController : ControllerBase
 {
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
+    /// <summary>
+/// hola
+/// </summary>
 
     public UsuariosController(IConfiguration configuration)
     {
@@ -21,6 +27,9 @@ public class UsuariosController : ControllerBase
     }
 
     //Muestra la lista de todos los usuarios registrados en la base de datos
+    /// <summary>
+/// hola
+/// </summary>
 
     [HttpGet]
     [Route("GetAllUsuarios")]
@@ -38,6 +47,9 @@ public class UsuariosController : ControllerBase
     }
 
     //para mostrar un usuario, en una tabla con sus registros colocando el ID
+    /// <summary>
+/// hola
+/// </summary>
 
     [HttpGet]
     [Route("GetUsuariosById")]
@@ -55,6 +67,9 @@ public class UsuariosController : ControllerBase
     }
 
     //para insertar un nuevo usuarios en la base de datos
+    /// <summary>
+/// hola
+/// </summary>
 
     [HttpPost]
     [Route("AddUsuario")]
@@ -72,6 +87,9 @@ public class UsuariosController : ControllerBase
     }
 
     //para Actualizar un registro de un usuario en la base de datos
+    /// <summary>
+/// hola
+/// </summary>
 
 
     [HttpPut]
@@ -90,6 +108,9 @@ public class UsuariosController : ControllerBase
     }
 
     //para Eliminar un registro de un Usuario en la base de datos, con llamar un Id
+    /// <summary>
+/// hola
+/// </summary>
 
     [HttpDelete]
     [Route("DeleteUsuario")]

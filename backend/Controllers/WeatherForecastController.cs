@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers;
-
+/// <summary>
+/// hola
+/// </summary>
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
@@ -12,12 +14,16 @@ public class WeatherForecastController : ControllerBase
     };
 
     private readonly ILogger<WeatherForecastController> _logger;
-
+    /// <summary>
+/// hola
+/// </summary>
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
         _logger = logger;
     }
-
+    /// <summary>
+/// hola
+/// </summary>
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {

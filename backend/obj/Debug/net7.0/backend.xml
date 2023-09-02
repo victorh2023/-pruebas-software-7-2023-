@@ -4,9 +4,329 @@
         <name>backend</name>
     </assembly>
     <members>
+        <member name="T:backend.connection.BDManager">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="P:backend.connection.BDManager.GetInstance">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="P:backend.connection.BDManager.ConnectionString">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.connection.BDManager.GetData``1(System.String)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.connection.BDManager.GetDataWithParameters``1(System.String,Dapper.DynamicParameters)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.connection.BDManager.SetData(System.String,Dapper.DynamicParameters)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="T:backend.Controllers.CarritoCompraController">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="F:backend.Controllers.CarritoCompraController._configuration">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CarritoCompraController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CarritoCompraController.GetAllCarritoCompra">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CarritoCompraController.GetCarritoCompraById(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CarritoCompraController.AddCarritoCompra(backend.entidades.CarritoCompra)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CarritoCompraController.UpdateCarritoCompra(backend.entidades.CarritoCompra)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CarritoCompraController.DeleteCarritoCompra(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="T:backend.Controllers.CategoriaProductoController">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CategoriaProductoController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CategoriaProductoController.GetAllCategoriaProducto">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CategoriaProductoController.GetCategoriaProductoById(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CategoriaProductoController.AddCategoriaProducto(backend.entidades.CategoriaProducto)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CategoriaProductoController.UpdateCategoriaProducto(backend.entidades.CategoriaProducto)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.CategoriaProductoController.DeleteCategoriaProducto(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="T:backend.Controllers.DetalleCarritoController">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.DetalleCarritoController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.DetalleCarritoController.GetAllDetalleCarrito">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.DetalleCarritoController.GetDetalleCarritoById(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.DetalleCarritoController.AddDetalleCarrito(backend.entidades.DetalleCarrito)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.DetalleCarritoController.UpdateDetalleCarrito(backend.entidades.DetalleCarrito)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.DetalleCarritoController.DeleteDetalleCarrito(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="T:backend.Controllers.OdontologiaController">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.OdontologiaController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.OdontologiaController.GetAllOdontologia">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.OdontologiaController.GetOdontologiaById(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.OdontologiaController.AddOdontologia(backend.entidades.Odontologia)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.OdontologiaController.UpdateOdontologia(backend.entidades.Odontologia)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.OdontologiaController.DeleteOdontologia(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="T:backend.Controllers.ProductoController">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ProductoController.GetAllProductos">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ProductoController.GetProductoById(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ProductoController.AddProducto(backend.entidades.Producto)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ProductoController.UpdateProducto(backend.entidades.Producto)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ProductoController.DeleteProducto(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="T:backend.Controllers.ReservarCitaController">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ReservarCitaController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ReservarCitaController.GetAllReservarCita">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ReservarCitaController.GetReservarCitaById(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ReservarCitaController.AddReservarCita(backend.entidades.ReservarCita)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ReservarCitaController.UpdateReservarCita(backend.entidades.ReservarCita)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.ReservarCitaController.DeleteReservarCita(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="T:backend.Controllers.UsuariosController">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.UsuariosController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.UsuariosController.GetAllUsuarios">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.UsuariosController.GetUsuariosById(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.UsuariosController.AddUsuario(backend.entidades.Usuarios)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.UsuariosController.UpdateUsuario(backend.entidades.Usuarios)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.UsuariosController.DeleteUsuario(System.Int32)">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="T:backend.Controllers.WeatherForecastController">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{backend.Controllers.WeatherForecastController})">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.WeatherForecastController.Get">
+            <summary>
+            hola
+            </summary>
+        </member>
         <member name="P:backend.entidades.CarritoCompra.Id">
             <summary>
             ID
+            </summary>
+        </member>
+        <member name="T:backend.entidades.Usuarios">
+            <summary>
+            usuario
+            </summary>
+        </member>
+        <member name="T:backend.WeatherForecast">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="P:backend.WeatherForecast.Date">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="P:backend.WeatherForecast.TemperatureC">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="P:backend.WeatherForecast.TemperatureF">
+            <summary>
+            hola
+            </summary>
+        </member>
+        <member name="P:backend.WeatherForecast.Summary">
+            <summary>
+            hola
             </summary>
         </member>
     </members>

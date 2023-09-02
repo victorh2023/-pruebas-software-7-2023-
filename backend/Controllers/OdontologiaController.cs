@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers;
+/// <summary>
+/// hola
+/// </summary>
 [EnableCors("DevelopmentCors")]
 [ApiController]
 [Route("api/[controller]")]
@@ -12,6 +15,9 @@ public class OdontologiaController : ControllerBase
 {
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
+    /// <summary>
+    /// hola
+    /// </summary>
 
     public OdontologiaController(IConfiguration configuration)
     {
@@ -21,6 +27,9 @@ public class OdontologiaController : ControllerBase
     }
 
     //Muestra la lista de todos los usuarios registrados
+    /// <summary>
+    /// hola
+    /// </summary>
 
     [HttpGet]
     [Route("GetAllOdontologia")]
@@ -38,6 +47,9 @@ public class OdontologiaController : ControllerBase
     }
 
     //insertando los Id muestra el Categoria en una tabla con sus registros
+    /// <summary>
+    /// hola
+    /// </summary>
 
 
     [HttpGet]
@@ -56,6 +68,9 @@ public class OdontologiaController : ControllerBase
     }
 
     //para Adicionar Registro de Categoria en la base de datos
+    /// <summary>
+    /// hola
+    /// </summary>
 
     [HttpPost]
     [Route("AddOdontologia")]
@@ -71,7 +86,9 @@ public class OdontologiaController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
-
+    /// <summary>
+    /// hola
+    /// </summary>
 
     [HttpPut]
     [Route("UpdateOdontologia")]
@@ -87,7 +104,9 @@ public class OdontologiaController : ControllerBase
             return StatusCode(500, err.Message);
         }
     }
-
+    /// <summary>
+    /// hola
+    /// </summary>
 
     [HttpDelete]
     [Route("DeleteOdontologia")]

@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers;
+/// <summary>
+/// hola
+/// </summary>
 [EnableCors("DevelopmentCors")]
 [ApiController]
 [Route("api/[controller]")]
@@ -13,6 +16,9 @@ public class DetalleCarritoController : ControllerBase
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
 
+    /// <summary>
+    /// hola
+    /// </summary>
     public DetalleCarritoController(IConfiguration configuration)
     {
         _configuration = configuration;
@@ -21,7 +27,9 @@ public class DetalleCarritoController : ControllerBase
     }
 
     //Muestra la lista de todos los usuruarios registrados
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpGet]
     [Route("GetAllDetalleCarrito")]
     public IActionResult GetAllDetalleCarrito()
@@ -38,7 +46,9 @@ public class DetalleCarritoController : ControllerBase
     }
 
     //insertando los Id muestra el usuario en una tabla con sus registros
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpGet]
     [Route("GetDetalleCarritoById")]
     public IActionResult GetDetalleCarritoById([FromQuery] int id)
@@ -55,7 +65,9 @@ public class DetalleCarritoController : ControllerBase
     }
 
     //para Adicionar usuarios en la base de datos
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpPost]
     [Route("AddDetalleCarrito")]
     public IActionResult AddDetalleCarrito(DetalleCarrito detalleCarrito)
@@ -70,7 +82,9 @@ public class DetalleCarritoController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpPut]
     [Route("UpdateDetalleCarrito")]
     public IActionResult UpdateDetalleCarrito(DetalleCarrito detalleCarrito)
@@ -86,7 +100,9 @@ public class DetalleCarritoController : ControllerBase
         }
     }
 
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpDelete]
     [Route("DeleteDetalleCarrito")]
     public IActionResult DeleteDetalleCarrito([FromQuery] int id)

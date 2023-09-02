@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers;
+/// <summary>
+    /// hola
+    /// </summary>
 [EnableCors("DevelopmentCors")]
 [ApiController]
 [Route("api/[controller]")]
@@ -12,7 +15,9 @@ public class CategoriaProductoController : ControllerBase
 {
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
-
+    /// <summary>
+    /// hola
+    /// </summary>
     public CategoriaProductoController(IConfiguration configuration)
     {
         _configuration = configuration;
@@ -21,7 +26,9 @@ public class CategoriaProductoController : ControllerBase
     }
 
     //Muestra la lista de todos los usuarios registrados
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpGet]
     [Route("GetAllCategoriaProducto")]
     public IActionResult GetAllCategoriaProducto()
@@ -39,7 +46,9 @@ public class CategoriaProductoController : ControllerBase
 
     //insertando los Id muestra el Categoria en una tabla con sus registros
 
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpGet]
     [Route("GetCategoriaProductoById")]
     public IActionResult GetCategoriaProductoById([FromQuery] int id)
@@ -56,7 +65,9 @@ public class CategoriaProductoController : ControllerBase
     }
 
     //para Adicionar Registro de Categoria en la base de datos
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpPost]
     [Route("AddCategoriaProducto")]
     public IActionResult AddCategoriaProducto(CategoriaProducto categoriaProducto)
@@ -72,7 +83,9 @@ public class CategoriaProductoController : ControllerBase
         }
     }
 
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpPut]
     [Route("UpdateCategoriaProducto")]
     public IActionResult UpdateCategoriaProducto(CategoriaProducto categoriaProducto)
@@ -88,7 +101,9 @@ public class CategoriaProductoController : ControllerBase
         }
     }
 
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpDelete]
     [Route("DeleteCategoriaProducto")]
     public IActionResult DeleteCategoriaProducto([FromQuery] int id)

@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers;
+/// <summary>
+/// hola
+/// </summary>
 [EnableCors("DevelopmentCors")]
 [ApiController]
 [Route("api/[controller]")]
@@ -12,14 +15,18 @@ public class ProductoController : ControllerBase
 {
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
-
+    /// <summary>
+/// hola
+/// </summary>
     public ProductoController(IConfiguration configuration)
     {
         _configuration = configuration;
         connectionString = _configuration["SqlConnectionString:DefaultConnection"];
         BDManager.GetInstance.ConnectionString = connectionString;
     }
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpGet]
     [Route("GetAllProductos")]
     public IActionResult GetAllProductos()
@@ -35,7 +42,9 @@ public class ProductoController : ControllerBase
         }
     }
 
-
+    /// <summary>
+/// hola
+/// </summary>
     [HttpGet]
     [Route("GetProductoById")]
     public IActionResult GetProductoById([FromQuery] int id)
@@ -50,7 +59,9 @@ public class ProductoController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
-
+    /// <summary>
+/// hola
+/// </summary>
     [HttpPost]
     [Route("AddProducto")]
     public IActionResult AddProducto(Producto producto)
@@ -65,7 +76,9 @@ public class ProductoController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
-
+    /// <summary>
+/// hola
+/// </summary>
     [HttpPut]
     [Route("UpdateProducto")]
     public IActionResult UpdateProducto(Producto producto)
@@ -81,7 +94,9 @@ public class ProductoController : ControllerBase
         }
     }
 
-
+    /// <summary>
+/// hola
+/// </summary>
     [HttpDelete]
     [Route("DeleteProducto")]
     public IActionResult DeleteProducto([FromQuery] int id)

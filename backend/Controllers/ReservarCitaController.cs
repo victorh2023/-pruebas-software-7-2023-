@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers;
+/// <summary>
+/// hola
+/// </summary>
 [EnableCors("DevelopmentCors")]
 [ApiController]
 [Route("api/[controller]")]
@@ -12,6 +15,9 @@ public class ReservarCitaController : ControllerBase
 {
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
+    /// <summary>
+/// hola
+/// </summary>
 
     public ReservarCitaController(IConfiguration configuration)
     {
@@ -21,6 +27,9 @@ public class ReservarCitaController : ControllerBase
     }
 
     //Muestra la lista de todos los usuarios registrados
+    /// <summary>
+/// hola
+/// </summary>
 
     [HttpGet]
     [Route("GetAllReservarCita")]
@@ -38,6 +47,9 @@ public class ReservarCitaController : ControllerBase
     }
 
     //insertando los Id muestra el usuario en una tabla con sus registros
+    /// <summary>
+/// hola
+/// </summary>
 
     [HttpGet]
     [Route("GetReservarCitaById")]
@@ -55,6 +67,9 @@ public class ReservarCitaController : ControllerBase
     }
 
     //para Adicionar Registro Usuarios en la base de datos
+    /// <summary>
+/// hola
+/// </summary>
 
     [HttpPost]
     [Route("AddReservarCita")]
@@ -70,7 +85,9 @@ public class ReservarCitaController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
-
+    /// <summary>
+/// hola
+/// </summary>
     [HttpPut]
     [Route("UpdateReservarCita")]
     public IActionResult UpdateReservarCita(ReservarCita reservarCita)
@@ -86,7 +103,9 @@ public class ReservarCitaController : ControllerBase
         }
     }
 
-
+    /// <summary>
+/// hola
+/// </summary>
     [HttpDelete]
     [Route("DeleteReservarCita")]
     public IActionResult DeleteReservarCita([FromQuery] int id)

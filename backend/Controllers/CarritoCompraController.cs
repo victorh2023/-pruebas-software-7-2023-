@@ -4,15 +4,26 @@ using backend.servicios;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
+
+
 namespace backend.Controllers;
+/// <summary>
+/// hola
+/// </summary>
 [EnableCors("DevelopmentCors")]
 [ApiController]
 [Route("api/[controller]")]
 public class CarritoCompraController : ControllerBase
 {
+    /// <summary>
+    /// hola
+    /// </summary>
     private readonly IConfiguration _configuration;
     private readonly string? connectionString;
 
+    /// <summary>
+    /// hola
+    /// </summary>
     public CarritoCompraController(IConfiguration configuration)
     {
         _configuration = configuration;
@@ -21,7 +32,9 @@ public class CarritoCompraController : ControllerBase
     }
 
     //Muestra la lista de todos los usuarios registrados
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpGet]
     [Route("GetAllCarritoCompra")]
     public IActionResult GetAllCarritoCompra()
@@ -38,6 +51,9 @@ public class CarritoCompraController : ControllerBase
     }
 
     //insertando los Id muestra el usuario en una tabla con sus registros
+    /// <summary>
+    /// hola
+    /// </summary>
 
     [HttpGet]
     [Route("GetCarritoCompraById")]
@@ -55,6 +71,9 @@ public class CarritoCompraController : ControllerBase
     }
 
     //para Adicionar Registro Usuarios en la base de datos
+    /// <summary>
+    /// hola
+    /// </summary>
 
     [HttpPost]
     [Route("AddCarritoCompra")]
@@ -70,7 +89,9 @@ public class CarritoCompraController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpPut]
     [Route("UpdateCarritoCompra")]
     public IActionResult UpdateCarritoCompra(CarritoCompra carritoCompra)
@@ -86,7 +107,9 @@ public class CarritoCompraController : ControllerBase
         }
     }
 
-
+    /// <summary>
+    /// hola
+    /// </summary>
     [HttpDelete]
     [Route("DeleteCarritoCompra")]
     public IActionResult DeleteCarritoCompra([FromQuery] int id)

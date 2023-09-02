@@ -1,5 +1,8 @@
 namespace backend.entidades
 {
+    /// <summary>
+    /// usuario
+    /// </summary>
     public class Usuarios : Common
     {
         public int Id { get; set; }
